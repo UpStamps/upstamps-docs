@@ -1,19 +1,23 @@
 export default {
-  title: "Upstamps Docs",
+  title: "UpStamps Docs",
   description: "UpStamps Documentation",
-  menu: ["Getting Started", "Components"],
+  menu: ["Introduction", "Getting Started", "API Reference"],
   dest: "/docs",
-  ignore: ['README.md', 'CHANGELOG.md', 'LICENSE', 'build/**', 'build', 'node_modules'],
+  public: "/public",
+  files: "**/*.{md,mdx}",
+  ignore: [
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "build/**",
+    "build",
+    "node_modules"
+  ],
   htmlContext: {
     favicon: "https://avatars.dicebear.com/v2/male/dd.svg"
   },
   themeConfig: {
-    mode: "light",
-    logo: {
-      src: "https://avatars.dicebear.com/v2/male/dd.svg",
-      margin: "auto",
-      width: 128
-    }
+    mode: "light"
   },
   typescript: true
 };
