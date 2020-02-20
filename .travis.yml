@@ -6,8 +6,7 @@ cache:
     - node_modules
 branches:
   only:
-    - master
-    - develop
+    - /^v1.*$/
 script:
   - npm run build
 deploy:

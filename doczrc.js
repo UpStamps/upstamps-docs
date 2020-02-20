@@ -1,5 +1,5 @@
 export default {
-  title: "UpStamps Docs",
+  title: "UpStamps Documentation",
   description: "UpStamps Documentation",
   menu: ["Introduction", "Getting Started", "API Reference"],
   dest: "/docs",
