@@ -1,7 +1,7 @@
 export default {
   title: "UpStamps Documentation",
   description: "UpStamps Documentation",
-  menu: ["Introduction", "Getting Started", "API Reference"],
+  menu: ["Introduction", "Getting Started", "React Integration", "API Reference"],
   dest: "/docs",
   public: "/public",
   files: "**/*.{md,mdx}",

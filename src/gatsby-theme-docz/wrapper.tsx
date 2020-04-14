@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Helmet } from "react-helmet-async";
 
-const Wrapper = ({ children, doc }: any) => {
+const Wrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <React.Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{doc.value.name}</title>
+        <title>UpStamps Documentation</title>
         <link
           rel="icon"
           type="image/png"
