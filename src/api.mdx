@@ -7,8 +7,6 @@ description:
 
 Set up UpStamps in your app
 
-## Rest API
-
 With the Rest API endpoint, you can make a direct call to the UpStamps Service API. This is useful if you need to use server-side logic or add to your implementation, in different languages or frameworks.
 
 ### API URL
@@ -17,10 +15,16 @@ With the Rest API endpoint, you can make a direct call to the UpStamps Service A
 https://services.upstamps.com/api
 ```
 
+# Flags
+
+---
+
+Feature flags are an excellent and new way to test features in production. Take advantage of different environments to hide or show your features. This can be used to facilitate the development process on project features that are not yet ready to be presented in production or even disable in real-time if any of the features in production are malfunctioning.
+
 ## Flags Endpoint - Get
 
 ```bash
-https://services.upstamps.com/api/[ClientID]/[ProjectKey]/[envKey]/flags
+API_URL/[ClientID]/[ProjectKey]/[envKey]/flags
 ```
 
 response:
@@ -32,5 +36,166 @@ response:
             "name": "private_msg_2"
         }
     ]
+}
+```
+
+# Remote Flags
+
+---
+
+Remote Flags have the same normal characteristics as a Flag but they can have a data payload. This data payload allows you to provide real-time properties to your project's features. If, for example, some of the features of a project need to change color, size or even other data in different environments, then the payload of data from a Remote Flag is the most suitable.
+
+## Remote Flags Endpoint - Get
+
+```bash
+API_URL/[ClientID]/[ProjectKey]/[envKey]/remotes
+```
+
+response:
+
+```js
+{
+    "remotes": [
+        {
+            "name": "new_one",
+            "data": {
+                "showFont": true,
+                "color": "red"
+            }
+        }
+    ]
+}
+```
+
+# A/B Testing
+
+---
+
+It is sometimes difficult to understand whether a particular feature is having an impact on the project. To determine if a feature is being used properly, we can do A / B tests. This allows you to understand and compare the impact of functionality in different formats.
+
+When using UpStamps' A / B Tests it is possible to see if the user clicked on a certain feature. The features placed in the A / B Tests will be randomly shown to users. Use the Emitter to send the values to the UpStamps Dashboard.
+
+## A/B Testing Endpoint - Get
+
+```bash
+API_URL/[ClientID]/[ProjectKey]/[envKey]/testing
+```
+
+response:
+
+```js
+{
+    "ABTesting": [
+        {
+            "name": "chat_color",
+            "variantA": "Red",
+            "variantB": "Blue"
+        }
+    ]
+}
+```
+
+## A/B Testing Endpoint - Post
+
+```bash
+API_URL/[ClientID]/[ProjectKey]/[envKey]/testing
+```
+
+JSON Body:
+
+```js
+{
+    "name": "chat_color",
+    "varA": 0,
+    "varB": 1
+}
+```
+
+response:
+
+```js
+{
+    "update_ABTesting": {
+        "affected_rows": 1,
+        "returning": [
+            {
+                "name": "chat_color"
+            }
+        ]
+    }
+}
+```
+
+# Segments
+
+---
+
+Users can be from different countries or even be using different platforms. Use Segments to isolate certain features by a country, browser or even the type of device. With Segments, it is possible to display features, for example, only on mobile browsers or even users who are using only Google Chrome.
+
+Notice: To use Segments it is necessary to integrate ScopesProvider. See the ScopesProvider instructions above to be able to register users.
+
+## Segment Endpoint - Get
+
+```bash
+API_URL/[ClientID]/[ProjectKey]/[envKey]/segment?QueryString
+```
+
+```bash
+QueryString = ?name=my_segment&country=Portugal&client=Microsoft Edge&clientType=mobile
+```
+
+response:
+
+```js
+{
+    "segment": [
+        {
+            "name": "my_segment",
+            "geolocation": {
+                "name": "Portugal"
+            },
+            "device": {
+                "client": {
+                    "name": "Microsoft Edge",
+                    "type": "mobile"
+                }
+            }
+        }
+    ]
+}
+```
+
+# Scopes
+
+---
+
+The scope provider has two parameters, name and email. The email must be unique per user.
+
+## Scopes Endpoint - Post
+
+```bash
+API_URL/[ClientID]/[ProjectKey]/scopes/add
+```
+
+JSON Body:
+
+```js
+{
+    "name": "username",
+	"email": "users@mail.com"
+}
+```
+
+response:
+
+```js
+{
+    "insert_Scope": {
+        "returning": [
+            {
+                "id": "80b9eccf-5107-40ea-8ef0-24e03c16fd5c"
+            }
+        ]
+    }
 }
 ```
