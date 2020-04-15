@@ -13,11 +13,24 @@ export default {
     "build",
     "node_modules"
   ],
-  htmlContext: {
-    favicon: "https://avatars.dicebear.com/v2/male/dd.svg"
-  },
   themeConfig: {
-    mode: "light"
+    fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
+    colors: {
+      background: "#e8e4e6",
+      primary: "#d99738",
+      header: {
+        bg: "#004643",
+        text: "white",
+        button: {
+          bg: "#f9bc60",
+          color: "#FFF"
+        }
+      },
+      sidebar: {
+        bg: "#FFF",
+        navLinkActive: "#d99738"
+      }
+    }
   },
   typescript: true
 };
