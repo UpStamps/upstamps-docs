@@ -1,29 +1,35 @@
-# Typescript Docz example
+# Introduction
 
-## Using `create-docz-app`
+What is UpStamps?
 
-```sh
-npx create-docz-app docz-app-typescript --example typescript
-# or
-yarn create docz-app docz-app-typescript --example typescript
-```
+**UpStamps** is a management platform for Feature/Toggle Flags. It is a new way to test features under development in production. Feature flags help developers and product creators release untested or test new features in production or different environments.
 
-## Download manually
+Quickly test certain features of your projects in real-time with your users. UpStamps offers a simple interface for creating flags with support for different plug-a-play SDKs for your projects.
 
-```sh
-curl https://codeload.github.com/doczjs/docz/tar.gz/master | tar -xz --strip=2 docz-master/examples/typescript
-mv typescript docz-typescript-example
-cd docz-typescript-example
-```
+## Features
 
-## Setup
+- **Multiple projects** - Organize your products by different projects;
+- **Different types of environments** - Create different types of environments inside of the projects to organize the features;
+- **Simple dashboard** - Organize your features with a simple dashboard;
+- **Project settings**
+- **Easy-to-use Integrations** - Integrate into your projects with pre-built components and language SDKs;
 
-```sh
-yarn # npm i
-```
+## Get started
 
-## Run
+Follow the [quick start](/src-getting-started) to start integrating feature flags in your projects.
 
-```sh
-yarn dev # npm run dev
-```
+## Explore
+
+The UpStamps docs are structured into the following sections.
+
+1. **Introduction:** Start here to learn about the documentation, components, API and how to use it.
+2. **Getting Started:** Learn how to get the most out of UpStamps features, how to install and use the built-in components.
+3. **API Reference:** Advanced UpStamps capabilities to cover all your needs.
+
+## Integrations
+
+- JavaScript
+    - [Vanilla (Browser & Node)](/src-vanilla-integration)
+    - [React](/src-react-integration)
+- Others
+    - [Rest API](/src-api)

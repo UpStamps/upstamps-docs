@@ -6,7 +6,7 @@ menu: Integrations
 
 # JS Vanilla Integration
 
-Integration with React helps and facilitates the process of testing and developing features in production and other environments. This integration consists of a set of plug-and-play components to accelerate the development process in your project.
+Integration with JavaScript Vanilla helps and facilitates the process of testing and developing features in production and other environments. The vanilla version can be integrated into any environment that uses JavaScript, you can use this integration in projects like Vue, Svelte or other JavaScript frameworks.
 
 Start by installing the library following the instructions below.
 
@@ -15,13 +15,19 @@ Start by installing the library following the instructions below.
 First, let's install some packages!
 
 ```bash
-npm install --save upstamps-js node-fetch
+npm install --save upstamps-js
 ```
 
 or with yarn
 
 ```bash
-yarn add upstamps-js node-fetch
+yarn add upstamps-js
+```
+
+or with Script Tag
+
+```bash
+<script type="module" src="https://unpkg.com/upstamps-js"></script>
 ```
 
 ## Create a new instance
@@ -38,7 +44,7 @@ let UpStampsInstance = new UpStamps({
 });
 ```
 
-That's it! Now your app is ready to start using feature flags and other features. Let's start using by importing some pre-built components inside of `upstamps-react`.
+That's it! Now your app is ready to start using feature flags and other features. Follow the instructions of the supported methods to make the most of the UpStamps functionalities.
 
 ## Usage
 
@@ -73,13 +79,25 @@ const AnotherFeature = async () => {
 };
 ```
 
+### CodeSandBox Demo
+
+View and use this CodeSandBox to see the configuration of UpStamps and its features. This CodeSandBox shows an example working with different features of the application appear and disappear using feature flags.
+
+<iframe
+  src="https://codesandbox.io/embed/upstamps-js-vanilla-demo-rgic3?fontsize=14&hidenavigation=1&theme=dark"
+  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+  title="upstamps-js-vanilla-demo"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
 ## Scopes
 
 ---
 
-To start using Segments or other features depending on the user's behavior, it is necessary to configure the scope provider. This provider must be within the main provider which can be seen above. It uses the same settings.
+To start using Segments or other features depending on the user's behavior, it is necessary to configure the scope. Invoke the scope method to add relevant user information.
 
-The scope provider has two parameters, name and email. The email must be unique per user.
+The scope method has two parameters, name and email. The email must be unique per user.
 
 ```js
 UpStampsInstance.scopes({ name: "Username", email: "user@email.com" });
@@ -124,7 +142,7 @@ Result: {show: true | false, data: Payload}
 
 It is sometimes difficult to understand whether a particular feature is having an impact on the project. To determine if a feature is being used properly, we can do A / B tests. This allows you to understand and compare the impact of functionality in different formats.
 
-When using UpStamps' A / B Tests it is possible to see if the user clicked on a certain feature. The features placed in the A / B Tests will be randomly shown to users. Use the Emitter to send the values to the UpStamps Dashboard.
+When using UpStamps' A / B Tests it is possible to see if the user clicked on a certain feature. The features placed in the A / B Tests will be randomly shown to users. Use the Emitter to send the values to the UpStamps [Dashboard](https://app.upstamps.com).
 
 The `emitter` is a function that understands which version of the test is shown on the user's screen. This function can be used in different events or contexts, for example: click, hover, etc.
 
@@ -142,7 +160,7 @@ Result: {show: true | false, variant: A | B, emitter: Function}
 
 Users can be from different countries or even be using different platforms. Use Segments to isolate certain features by a country, browser or even the type of device. With Segments, it is possible to display features, for example, only on mobile browsers or even users who are using only Google Chrome.
 
-Notice: To use Segments it is necessary to integrate ScopesProvider. See the ScopesProvider instructions above to be able to register users.
+Notice: To use Segments it is necessary to integrate Scopes. See the Scope method instructions above to be able to register users.
 
 ```js
 UpStampsInstance.segment("my_segment", {
