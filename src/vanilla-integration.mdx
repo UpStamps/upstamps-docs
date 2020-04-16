@@ -6,6 +6,10 @@ menu: Integrations
 
 # JS Vanilla Integration
 
+Integration with React helps and facilitates the process of testing and developing features in production and other environments. This integration consists of a set of plug-and-play components to accelerate the development process in your project.
+
+Start by installing the library following the instructions below.
+
 ## Installation
 
 First, let's install some packages!
@@ -67,6 +71,23 @@ const AnotherFeature = async () => {
     })
     .catch(e => throw e);
 };
+```
+
+## Scopes
+
+---
+
+To start using Segments or other features depending on the user's behavior, it is necessary to configure the scope provider. This provider must be within the main provider which can be seen above. It uses the same settings.
+
+The scope provider has two parameters, name and email. The email must be unique per user.
+
+```js
+UpStampsInstance.scopes({ name: "Username", email: "user@email.com" });
+
+/*
+Success Result: { error: false, success: true, message: "Scope created", }
+Error Result: { error: true, message: "Uniqueness violation. duplicate email value violates unique constraint" }
+*/
 ```
 
 ## Flags
