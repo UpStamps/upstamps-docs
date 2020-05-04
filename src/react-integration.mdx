@@ -187,20 +187,24 @@ const AppComponent = () => {
   const { show, variant, emitter } = useABTest("my_ab_test");
 
   return (
-    <div>
-      {show && variant === "A" ? (
-          <div>
-            This is a A TEST
-            <button onClick={() => emitter()}>Send A Test</button>
-          </div>
-        ) : variant === "B" ? (
-          <div>
-            This is a B TEST
-            <button onClick={() => emitter()}>Send B Test</button>
-          </div>
-        ) : (
-          <div>This is a DEFAULT TEST</div>
-        )}
+     <div>
+      {show && (
+        <div>
+          {variant === "A" ? (
+            <div>
+              This is a A TEST
+              <br />
+              <button onClick={() => emitter()}>Send A Test</button>
+            </div>
+          ) : variant === "B" ? (
+            <div>
+              This is a B TEST
+              <br />
+              <button onClick={() => emitter()}>Send B Test</button>
+            </div>
+          ) : "This is the default test"}
+        </div>
+      )}
     </div>
   );
 };
@@ -210,7 +214,7 @@ const AppComponent = () => {
 
 ```js
 import React from "react";
-import {  useABTest } from "upstamps-react";
+import {  ABTest } from "upstamps-react";
 
 ...
 
