@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Helmet } from "react-helmet-async";
+import "./global.css";
 
 const Wrapper = ({ children }: { children: React.ReactNode }) => {
   return (

@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;700&family=Merriweather:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,700&display=swap");
+
+html {
+  font-family: sans-serif !important;
+  line-height: 1.15 !important;
+  -webkit-text-size-adjust: 100% !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+
+body {
+  font-family: Merriweather Sans, sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #212529 !important;
+}
+
+a, div {
+  font-family: "Roboto", sans-serif !important;
+}
+
+code,
+kbd,
+pre,
+p,
+strong,
+ul li,
+ol li,
+samp {
+  font-family: "Roboto", sans-serif !important;
+  font-size: 0.95em !important;
+}
+
+button,
+optgroup,
+select,
+textarea {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h2 a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Merriweather, serif !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
+
+.font-serif {
+  font-family: Merriweather, serif !important;
+}
+.font-sans-serif {
+  font-family: Merriweather Sans, sans-serif !important;
+}
