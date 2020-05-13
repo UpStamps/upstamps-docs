@@ -18,16 +18,17 @@ export default {
     colors: {
       background: "#e8e4e6",
       primary: "#d99738",
+      border: "none",
       header: {
-        bg: "#004643",
-        text: "white",
+        bg: "#e8e4e6",
+        text: "black",
         button: {
           bg: "#f9bc60",
           color: "#FFF"
         }
       },
       sidebar: {
-        bg: "#FFF",
+        bg: "#e8e4e6",
         navLinkActive: "#d99738"
       }
     }
