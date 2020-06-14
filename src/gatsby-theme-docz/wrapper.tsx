@@ -37,6 +37,16 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
           type="image/jpg"
           href="https://dev.upstamps.com/imgs/logo.jpg"
         />
+
+        <script
+          data-mode="hash"
+          async
+          defer
+          src="https://cdn.simpleanalytics.io/hello.js"
+        ></script>
+        <noscript>
+          {`<img src="https://api.simpleanalytics.io/hello.gif" alt="" />`}
+        </noscript>
       </Helmet>
       {children}
     </React.Fragment>
