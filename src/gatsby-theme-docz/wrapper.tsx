@@ -47,6 +47,13 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
         <noscript>
           {`<img src="https://api.simpleanalytics.io/hello.gif" alt="" />`}
         </noscript>
+
+        <script>
+          {`window.customerlySettings = {
+            app_id: "a0224227"
+          };`}
+        </script>
+        <script src="https://widget-ga.customerly.io/launcher.js"></script>
       </Helmet>
       {children}
     </React.Fragment>
